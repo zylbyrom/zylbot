@@ -40,7 +40,7 @@ module.exports = {
             if(message && message.member.roles.highest.comparePositionTo(member.roles.highest) <= 0) return message.reply("tu ne peux pas bannir ce membre")
             if((await message.guild.bans.fetch()).get(user.id)) return message.reply("ce membre est déjà ban")
 
-            try {await user.send(`tu as été banni du serveur ${message.guild.name} pas ${message.user.tag} pour la raison : \`${reason}\``)} catch(err) {}
+            try {await user.send(`tu as été banni du serveur ${message.guild.name} par ${message.user.tag} pour la raison : \`${reason}\``)} catch(err) {}
 
             await message.reply(`${message.user} a banni ${user.tag} pour la raison : \`${reason}\``)
 
